@@ -13,13 +13,11 @@ def lambda_handler(event, context):
         "objectKey": "portfoliobuild.zip"
     }
     
-    
     try:
         job = event.get('CodePipeline.job')
         
         if job:
             for artifact in job["data"]["inputArtifacts"]:
-                print str(artifact)
                 if artifact["name"] == "MyAppBuild":
                     location = artifact["location"]["s3Location"]
                     
@@ -45,7 +43,7 @@ def lambda_handler(event, context):
         
         if job:
             codepipeline = boto3.client('codepipeline')
-            codepipeline.put_job_success_result(jobID=job['id'])
+            codepipeline.put_job_success_result(jobId=job['id'])
         
     except:
         topic.publish(Subject="Portfolio Deployment Failed", Message="Portfolio deployment has failed. location: " + str(location))
