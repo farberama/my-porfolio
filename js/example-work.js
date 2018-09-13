@@ -6,7 +6,7 @@ class ExampleWork extends React.Component {
     super(props);
 
     this.state = {
-      'modalOPen': false,
+      'modalOpen': false,
       'selectedExample': this.props.work[0]
     };
 
