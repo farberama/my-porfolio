@@ -60,7 +60,7 @@ describe('ExampleWorkBubble Component', () => {
     });
 
     it('should call the openModal handler when clicked', () => {
-        component.find('.section__exampleWrapper').simulate('click');
+        component.find('.section__example').simulate('click');
         expect(mockOpenModalFn).toHaveBeenCalled(); 
-    })
+    });
 });
