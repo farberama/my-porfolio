@@ -1,5 +1,32 @@
-import 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ExampleWork from './example-work';
 
-console.log('Loaded react-dom');
+const myWork = [
+    {
+        'title': 'Work Example 1',
+        'image': {
+            'desc': 'example screenshot of a project involving code',
+            'src': 'images/example1.png',
+            'comment': ''
+        }
+    },
+    {
+        'title': 'Work Example 2',
+        'image': {
+            'desc': 'example screenshot of a project involving chemestry',
+            'src': 'images/example2.png',
+            'comment': ''
+        }
+    },
+    {
+        'title': 'Work Example 3',
+        'image': {
+            'desc': 'example screenshot of a project involving cats',
+            'src': 'images/example3.png',
+            'comment': ''
+        }
+    }
+]
 
-console.log('webpack is working');
+ReactDOM.render(<ExampleWork work={myWork}/>, document.getElementById('example-work')); 
